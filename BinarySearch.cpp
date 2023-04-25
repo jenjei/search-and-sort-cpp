@@ -2,6 +2,7 @@
 #include <algorithm>
 #include <cmath>
 #include "SequentialSearch.h"
+#include <iomanip>
 
 using namespace std;
 
@@ -61,7 +62,7 @@ void BinarySearch::performanceTest(int size, int numTests) {
         Timer seqTimer;
         int seqResult = SequentialSearch::search(arr, size, key);
         double seqTime = seqTimer.elapsed_time();
-        cout << "Sequential search time: " << seqTime << " seconds" << endl;
+        cout << "Sequential search time: " << fixed << setprecision(7) << seqTime << " seconds" << endl;
 
         // Perform binary search
         cout << "Performing binary search..." << endl;
